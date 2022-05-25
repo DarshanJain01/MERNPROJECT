@@ -86,7 +86,6 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   
 
   const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
-console.log(message)
   try {
     await sendEmail({
       email: user.email,
@@ -180,8 +179,8 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
   };
-
-  if (req.body.avatar !== "") {
+  let isUndefined=req.body.avatar == "undefined"
+  if (!isUndefined) {
     const user = await User.findById(req.user.id);
 
     const imageId = user.avatar.public_id;
@@ -193,19 +192,16 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
       width: 150,
       crop: "scale",
     });
-
     newUserData.avatar = {
       public_id: myCloud.public_id,
       url: myCloud.secure_url,
     };
   }
-  console.log(newUserData)
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
     new: true,
     runValidators: true,
     useFindAndModify: false,
   });
-  console.log('darhsna',user)
 
   res.status(200).json({
     success: true,

@@ -55,12 +55,16 @@ const Header = () => {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     if (showLinks) {
       linksContainerRef.current.style.height = `${linksHeight}px`;
+      linksContainerRef.current.style.backgroundColor = `white`;
+
     } else {
       linksContainerRef.current.style.height = '0px';
+      linksContainerRef.current.style.backgroundColor = `#6882BB`;
+
     }
   }, [showLinks]);
   return (
-    <nav>
+    <nav className="navbar">
       <div className='nav-center'>
         <div className='nav-header'>
           <img src={logo} className='logo' alt='logo' />

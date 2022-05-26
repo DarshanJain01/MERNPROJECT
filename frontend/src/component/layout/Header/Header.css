@@ -149,6 +149,15 @@ p {
 nav {
   background: var(--clr-white);
   box-shadow: var(--light-shadow);
+  width: 100%;
+  position: sticky;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+  background-color: #6882BB;
+  color: white;
+  transition: padding 0.3s ease 0s;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
 }
 .nav-header {
   display: flex;
@@ -221,6 +230,7 @@ nav {
   .links a{
     padding: 0;
     margin: 0 0.5rem;
+    color: white;
   }
   .links a:hover {
     padding: 0;
@@ -231,11 +241,11 @@ nav {
   }
   .social-icons a {
     margin: 0 0.5rem;
-    color: var(--clr-primary-5);
+    color:white;
     transition: var(--transition);
     font-size: 1.7rem;
     position: relative;
-    top:0.4rem;
+    /* top:0.4rem; */
   }
   .social-icons a:hover {
     color: var(--clr-primary-7);

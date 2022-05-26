@@ -1,52 +1,25 @@
-import React from "react";
-import "./aboutSection.css";
-import { Button, Typography, Avatar } from "@material-ui/core";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import React from 'react'
+import {Link} from 'react-router-dom'
+
 const About = () => {
-  const visitInstagram = () => {
-    window.location = "https://instagram.com/meabhisingh";
-  };
-  return (
-    <div className="aboutSection">
-      <div></div>
-      <div className="aboutSectionGradient"></div>
-      <div className="aboutSectionContainer">
-        <Typography component="h1">About Us</Typography>
-
+    return (
         <div>
-          <div>
-            <Avatar
-              style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/tripleayt/image/upload/v1631555947/products/jpyibarlaxawvcvqjv5b.png"
-              alt="Founder"
-            />
-            <Typography>Abhishek Singh</Typography>
-            <Button onClick={visitInstagram} color="primary">
-              Visit Instagram
-            </Button>
-            <span>
-              This is a sample wesbite made by @meabhisingh. Only with the
-              purpose to teach MERN Stack on the channel 6 Pack Programmer
-            </span>
-          </div>
-          <div className="aboutSectionContainer2">
-            <Typography component="h2">Our Brands</Typography>
-            <a
-              href="https://www.youtube.com/channel/UCO7afj9AUo0zV69pqEYhcjw"
-              target="blank"
-            >
-              <YouTubeIcon className="youtubeSvgIcon" />
-            </a>
-
-            <a href="https://instagram.com/meabhisingh" target="blank">
-              <InstagramIcon className="instagramSvgIcon" />
-            </a>
-          </div>
+            <div className='home-navi '>
+             <p ><Link to='/' className='link'>Home</Link>/About</p>
+           </div>
+           <div className='intro'>
+               <img src='../images/1.jpeg'  alt='imag' style={{width:'100%',height:'95%'}} />
+                <article className='articl'>
+                     <h1 style={{fontSize:'2.5rem'}}>Our Story</h1>
+                     <div className='underlinee' style={{marginTop:'0'}}></div>
+                        <p className='desci'>Hey!! welcome to our e-commerce website. It has been 
+                            ranked no.1 among other e-commerce websites.We are DELIGHTED by
+                            your presence on our website.
+                        </p>
+                    </article>
+           </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default About;
+export default About

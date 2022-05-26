@@ -1,4 +1,4 @@
-footer {
+/* footer {
   margin-top: 10vmax;
   padding: 2vmax;
   background-color: rgb(34, 33, 33);
@@ -70,4 +70,40 @@ footer {
 
 .rightFooter > a:hover {
   color: #eb4034;
+} */
+.footer {
+  background-color: #222222;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer h3 {
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+@media screen  and (max-width:1200px){
+  .footer {
+    margin-top: 1rem;
+  }
+  .footer h3 {
+    font-size: 2rem;
+  }
+}
+@media screen  and (max-width:360px){
+  .footer h3 {
+    font-size: 1rem;
+  }
+  .shop-now {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer h3 {
+    font-size: 0.8rem;
+  }
 }

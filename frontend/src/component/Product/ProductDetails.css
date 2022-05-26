@@ -196,6 +196,13 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.548);
 }
+.product-content {
+  width: 95%;
+  margin: 3% auto;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  gap: 3rem 3.5rem;
+}
 
 @media screen and (max-width: 600px) {
   .ProductDetails {

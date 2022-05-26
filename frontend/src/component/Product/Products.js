@@ -9,6 +9,9 @@ import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
+import Search from "./Search";
+import FilterComponent from "./filtercomponent";
+import ProductsList from "./productsList";
 
 // const categories = [
 //   "Laptop",
@@ -28,6 +31,7 @@ const Products = ({ match }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 25000]);
   const [category, setCategory] = useState("");
+  const [newKeyWord, setNewKeyWord] = useState("");
 
   const [ratings, setRatings] = useState(0);
 
@@ -49,16 +53,24 @@ const Products = ({ match }) => {
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);
   };
+  
   let count = filteredProductsCount;
 
   useEffect(() => {
+    console.log('kee',newKeyWord)
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
     dispatch(getProductCategories())
-    dispatch(getProduct(keyword, currentPage, price, category, ratings));
-  }, [dispatch, keyword,currentPage, price, category, ratings, alert, error]);
+    dispatch(getProduct(newKeyWord, currentPage, price, category, ratings));
+  }, [dispatch,keyword,currentPage, price, category, ratings, alert, error]);
+  
+  
+ const newKeyWordHandler=(value)=>{
+  dispatch(getProduct(value , currentPage, price, category, ratings));
+  setNewKeyWord(value)
+}
 
   return (
     <Fragment>
@@ -68,52 +80,10 @@ const Products = ({ match }) => {
         <Fragment>
           <MetaData title="PRODUCTS -- ECOMMERCE" />
           <h2 className="productsHeading">Products</h2>
-
-          <div className="products">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-          </div>
-
-          <div className="filterBox">
-            <Typography>Price</Typography>
-            <Slider
-              value={price}
-              onChange={priceHandler}
-              valueLabelDisplay="auto"
-              aria-labelledby="range-slider"
-              min={0}
-              max={25000}
-            />
-
-            <Typography>Categories</Typography>
-            <ul className="categoryBox">
-              {categories.map((category) => (
-                <li
-                  className="category-link"
-                  key={category}
-                  onClick={() => setCategory(category)}
-                >
-                  {category}
-                </li>
-              ))}
-            </ul>
-
-            <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
-              <Slider
-                value={ratings}
-                onChange={(e, newRating) => {
-                  setRatings(newRating);
-                }}
-                aria-labelledby="continuous-slider"
-                valueLabelDisplay="auto"
-                min={0}
-                max={5}
-              />
-            </fieldset>
-          </div>
+        <div className="product-content">
+          <FilterComponent { ...{newKeyWordHandler,newKeyWord,price,priceHandler,categories,category,setCategory,ratings,setRatings} }/>
+          <ProductsList products={products}/>
+        </div>
           {resultPerPage < count && (
             <div className="paginationBox">
               <Pagination

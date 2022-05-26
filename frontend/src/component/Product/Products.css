@@ -7,19 +7,42 @@
   font: 500 1.5vmax "Roboto";
   text-align: center;
 }
-
+.product-content {
+  width: 85%;
+  margin: 3% auto;
+  display: grid;
+  grid-template-columns: auto 2fr;
+  gap: 1rem 2.5rem;
+}
 .products {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 5vmax;
+  /* padding: 0 5vmax; */
   justify-content: center;
   min-height: 30vh;
 }
-
+.search-input {
+  border: none;
+  border-radius: 0.4rem;
+  background-color: white;
+  padding: 3%;
+  width: 13vmax;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+.myFiltersss {
+  height: 5rem;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  column-gap: 1rem;
+  margin-bottom: 50px;
+}
 .paginationBox {
   display: flex;
   justify-content: center;
-  margin: 6vmax;
+  margin: 3vmax;
 }
 
 .pagination {
@@ -68,8 +91,8 @@
 
 .filterBox {
   width: 10vmax;
-  position: absolute;
-  top: 10vmax;
+  /* position: absolute;
+  top: 13vmax; */
   left: 4vmax;
 }
 
@@ -92,12 +115,47 @@
 .filterBox > fieldset {
   border: 1px solid rgba(0, 0, 0, 0.329);
 }
+@media screen and (max-width: 830px) {
+  .filterBox {
+    width: 20vmax;
+    position: static;
+    /* margin: auto; 
+    width: 10vmax; */
+    /* position: absolute;
+    top: 14vmax; */
+    left: 4vmax;
+    z-index: -2;
+  }
+  .productsHeading {
+    margin: 2vmax 55vmax;
+  }
+  .product-content {
+    width: 85%;
+    margin: 3% auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0rem 3.5rem;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .filterBox {
     width: 20vmax;
     position: static;
     margin: auto;
+  }
+  .productsHeading {
+    margin: 5vmax auto;
+  }
+  .search-input{
+    width: 40vmax;
+  }
+  .product-content {
+    width: 85%;
+    margin: 3% auto;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem 2.5rem;
   }
 
   .page-link {

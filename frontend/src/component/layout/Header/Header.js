@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect,useLayoutEffect } from "react";
 import { Link } from 'react-router-dom';
 
 import { ReactNavbar } from "overlay-navbar";
@@ -63,6 +63,22 @@ const Header = () => {
 
     }
   }, [showLinks]);
+
+  function useWindowSize() {
+    useLayoutEffect(() => {
+      function updateSize() {
+        if(window.innerWidth>=800){
+          linksContainerRef.current.style.height = '0px';
+          linksContainerRef.current.style.backgroundColor = `#6882BB`;        }
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+    }, []);
+  }
+
+  useWindowSize()
+  
   return (
     <nav className="navbar">
       <div className='nav-center'>
@@ -82,6 +98,14 @@ const Header = () => {
                 </li>
               );
             })}
+            {social.map((socialIcon) => {
+            const { id, url, icon } = socialIcon;
+            return (
+              <li key={id} className='toggleDisplay'>
+                <Link to={url} className='icons'>{icon}</Link>
+              </li>
+            );
+          })}
           </ul>
         </div>
         <ul className='social-icons'>

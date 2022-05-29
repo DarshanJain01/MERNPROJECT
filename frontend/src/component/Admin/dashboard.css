@@ -1,9 +1,9 @@
 .dashboard {
+   position: relative;
   width: 100vw;
   max-width: 100%;
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  position: absolute;
+  grid-template-columns:  5fr;
 }
 
 .dashboardContainer {
@@ -36,7 +36,7 @@
   font: 300 1.3rem "Roboto";
   text-align: center;
   padding: 1.5rem;
-  width: 100%;
+  width: 50%;
   margin: 0 2rem;
 }
 .dashboardSummaryBox2 > a {

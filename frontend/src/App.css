@@ -3,7 +3,12 @@
   scroll-behavior: smooth;
 }
 
-body {
+/* #root {
+  display: flex;
+  flex-direction: column;
+ } */
+ html, body, #root {
+  height: 100%;
 }
 
 /* Chrome, Safari, Edge, Opera */

@@ -1,7 +1,7 @@
 .speedDial {
   position: fixed;
-  right: 3vmax;
-  top: 3vmax;
+  right: 7vmax;
+  top: 0.4vmax;
 }
 
 .speedDialIcon {
@@ -78,6 +78,10 @@ body {
 }
 ul {
   list-style-type: none;
+}.speedDial {
+  position: fixed;
+  right: 7vmax;
+  top: 0.4vmax;
 }
 a {
   text-decoration: none;
@@ -107,9 +111,16 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+@media screen and (max-width: 600px) {
+.speedDial {
+  position: fixed;
+  right: 3vmax;
+  top:13vmax;
+}
+}
 @media screen and (min-width: 600px) {
   h1 {
-    font-size: 4rem;
+    font-size: 1.5rem;
   }
   h2 {
     font-size: 2.5rem;
@@ -127,7 +138,12 @@ p {
   h2,
   h3,
   h4 {
-    line-height: 1;
+    /* line-height: 1; */
+  }
+  .speedDial {
+    position: fixed;
+    right: 3vmax;
+    top:11vmax;
   }
 }
 /*  global classes */
@@ -260,5 +276,29 @@ nav {
   }
   .toggleDisplay{
     display: none;
+  } 
+}
+@media screen and (min-width: 1100px) {
+
+  .speedDial {
+    position: fixed;
+    right:3vmax;
+    top: 8vmax;
   }
+  }
+@media screen and (min-width: 1300px) {
+
+  .speedDial {
+    position: fixed;
+    right: 5vmax;
+    top: 0.4vmax;
+  }
+  }
+@media screen and (min-width: 1450px) {
+
+.speedDial {
+  position: fixed;
+  right: 6vmax;
+  top: 0.4vmax;
+}
 }

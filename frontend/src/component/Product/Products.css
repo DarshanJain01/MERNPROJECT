@@ -1,17 +1,15 @@
+
 .productsHeading {
-  margin: 2vmax auto;
+  margin: 5vmax auto 0.5vmax auto;
   width: 15vw;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-  padding: 2vmax;
-  color: rgba(0, 0, 0, 0.678);
-  font: 500 1.5vmax "Roboto";
+  /* padding: 2vmax; */
   text-align: center;
 }
 .product-content {
-  width: 85%;
+  width: 95%;
   margin: 3% auto;
   display: grid;
-  grid-template-columns: auto 2fr;
+  grid-template-columns: 0.3fr 3fr;
   gap: 1rem 2.5rem;
 }
 .products {
@@ -130,7 +128,7 @@
     margin: 2vmax 55vmax;
   }
   .product-content {
-    width: 85%;
+    width: 95%;
     margin: 3% auto;
     display: grid;
     grid-template-columns: auto auto;

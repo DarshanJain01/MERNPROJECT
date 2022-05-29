@@ -27,9 +27,9 @@ const Footer = () => {
     //     <a href="http://instagram.com/meabhisingh">Facebook</a>
     //   </div>
     // </footer>
-      <section className='footer' >
+      <footer className='footer' >
               <h3 >© 2022 <span style={{color:'#6F3222', margin:'0rem 1rem'}}>ComfySloth</span></h3><h3 >  All rights reserved</h3>
-          </section>
+      </footer>
   );
 };
 

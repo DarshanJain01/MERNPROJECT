@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@material-ui/lab";
+import {RiSearchLine} from "react-icons/ri"
 
 const ProductCard = ({ product }) => {
   const options = {
@@ -9,8 +10,14 @@ const ProductCard = ({ product }) => {
     precision: 0.5,
   };
   return (
-    <Link className="productCard" to={`/product/${product._id}`}>
-      <img src={product.images[0].url} alt={product.name} />
+    <div className="container productCard">
+
+    {/* <Link className="productCard" to={`/product/${product._id}`}> */}
+      <img src={product.images[0].url} className='imge' alt={product.name} />
+      <div className="blck">
+      <Link className="search-icon" to={`/product/${product._id}`}>
+                      <RiSearchLine />
+                    </Link>       </div>
       <p>{product.name}</p>
       <div>
         <Rating {...options} />{" "}
@@ -20,7 +27,9 @@ const ProductCard = ({ product }) => {
         </span>
       </div>
       <span>{`₹${product.price}`}</span>
-    </Link>
+    {/* </Link> */}
+            </div>
+
   );
 };
 

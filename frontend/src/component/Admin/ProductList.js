@@ -122,6 +122,16 @@ const ProductList = ({ history }) => {
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">
+        <div className="home-navi ">
+        <p>
+          <a href="/" className="link">
+            Home
+          </a>
+          <a href="/admin/products" className="link">
+          /Admin/Products
+          </a>
+        </p>
+      </div>
           <h1 id="productListHeading">ALL PRODUCTS</h1>
 
           <DataGrid

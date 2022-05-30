@@ -69,6 +69,7 @@
   border: none;
   background-color: rgba(0, 0, 0, 0.616);
   padding: 0.5vmax;
+  margin: auto;
   cursor: pointer;
   color: white;
   transition: all 0.5s;
@@ -195,13 +196,6 @@
   font: 400 1.3vmax "Gill Sans";
   text-align: center;
   color: rgba(0, 0, 0, 0.548);
-}
-.product-content {
-  width: 95%;
-  margin: 3% auto;
-  display: grid;
-  grid-template-columns: 0.5fr 3fr;
-  gap: 3rem 3.5rem;
 }
 
 @media screen and (max-width: 600px) {

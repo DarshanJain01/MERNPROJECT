@@ -1,5 +1,5 @@
 .confirmOrderPage {
-  height: 100vh;
+  min-height: 100vh;
   background-color: white;
   display: grid;
   grid-template-columns: 6fr 3fr;
@@ -10,7 +10,7 @@
 }
 
 .confirmshippingArea {
-  padding: 5vmax;
+  padding: 5vmax 13vmax 0vmax 13vmax;
   padding-bottom: 0%;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .confirmCartItems {
-  padding: 5vmax;
+  /* padding: 5vmax; */
   padding-top: 2vmax;
 }
 

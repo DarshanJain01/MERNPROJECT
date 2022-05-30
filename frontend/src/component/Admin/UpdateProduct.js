@@ -4,6 +4,7 @@ import {
   clearErrors,
   updateProduct,
   getProductDetails,
+  getProductCategories
 } from "../../actions/productAction";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
@@ -21,6 +22,7 @@ const UpdateProduct = ({ history, match }) => {
   const alert = useAlert();
 
   const { error, product } = useSelector((state) => state.productDetails);
+  const { categories } = useSelector((state) => state.categories);
 
   const {
     loading,
@@ -37,21 +39,23 @@ const UpdateProduct = ({ history, match }) => {
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
+  // const categories = [
+  //   "Laptop",
+  //   "Footwear",
+  //   "Bottom",
+  //   "Tops",
+  //   "Attire",
+  //   "Camera",
+  //   "SmartPhones",
+  // ];
 
   const productId = match.params.id;
 
   useEffect(() => {
     if (product && product._id !== productId) {
       dispatch(getProductDetails(productId));
+      dispatch(getProductCategories());
+
     } else {
       setName(product.name);
       setDescription(product.description);

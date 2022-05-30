@@ -27,7 +27,6 @@ const NewProduct = ({ history }) => {
   const [Stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
-
   // const categories = [
   //   "Laptop",
   //   "Footwear",
@@ -43,14 +42,19 @@ const NewProduct = ({ history }) => {
       alert.error(error);
       dispatch(clearErrors());
     }
+    
 
     if (success) {
       alert.success("Product Created Successfully");
       history.push("/admin/dashboard");
       dispatch({ type: NEW_PRODUCT_RESET });
     }
-    dispatch(getProductCategories())
   }, [dispatch, alert, error, history, success]);
+
+  useEffect(()=>{
+    dispatch(getProductCategories())
+
+  },[])
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
@@ -88,7 +92,7 @@ const NewProduct = ({ history }) => {
       reader.readAsDataURL(file);
     });
   };
-
+console.log(categories)
   return (
     <Fragment>
       <MetaData title="Create Product" />

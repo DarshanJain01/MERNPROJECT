@@ -1,6 +1,7 @@
 .dashboard {
    position: relative;
   width: 100vw;
+  min-height: 100vh;
   max-width: 100%;
   display: grid;
   grid-template-columns:  5fr;
@@ -67,7 +68,7 @@
 }
 
 .lineChart {
-  width: 80%;
+  width: 60%;
   margin: auto;
 }
 

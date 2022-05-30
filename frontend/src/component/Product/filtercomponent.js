@@ -53,7 +53,7 @@ const [slider,setSlider]=useState(25000)
       </div>
 
      <div className="myFiltersss">
-        <h3 style={{ margin: "1rem auto"}}>
+        <h3 style={{ margin: "1rem auto",fontSize:'1.2rem'}}>
           <span>price Range:  </span>
           <div> &#8377;{currentSliderRange[0]} - &#8377;{currentSliderRange[1]}</div>
         </h3>
@@ -67,7 +67,7 @@ const [slider,setSlider]=useState(25000)
          />
       </div>
       <div className="myFiltersss">
-        <h3 style={{ margin: "1rem auto"}}>
+        <h3 style={{ margin: "1rem auto",fontSize:'1.2rem'}}>
           <span>Ratings Above:{ratings}  </span>
         </h3>
         <Slider

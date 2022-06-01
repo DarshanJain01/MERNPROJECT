@@ -11,6 +11,7 @@ const sendEmail = async (options) => {
       pass: process.env.SMPT_PASSWORD,
     },
   });
+  console.log(options.message)
 
   const mailOptions = {
     from: process.env.SMPT_MAIL,

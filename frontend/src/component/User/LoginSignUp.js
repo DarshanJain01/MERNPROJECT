@@ -73,10 +73,8 @@ const LoginSignUp = ({ history, location }) => {
 
   useEffect(() => {
     if (error) {
-       if(!Object.values(user).includes("")){
          alert.error(error);
          dispatch(clearErrors());
-    }
     }
 
     if (isAuthenticated) {
